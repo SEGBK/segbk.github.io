@@ -2,6 +2,11 @@ var app = angular.module('app', []);
 
 app.controller('navController', function navController($scope, $http){
 	$scope.elems = ["Repos", "Memebrs"]
+	$scope.current = "Repos"
+	$scope.updateCurrent = function(c){
+		$scope.current = c;
+		console.log($scope.current)
+	}
 });
 app.controller('userController', function userController($scope, $http){
 	$http({
