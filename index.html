@@ -112,8 +112,14 @@
       </div>
       <main class="mdl-layout__content mdl-color--grey-100" ng-controller="reposController">
       	<div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" ng-repeat="repo in repos">
-			<a href={{repo.html_url}} class="repo-text__name"> {{ repo.name }} </a>
-			<a ng-if="repo.has_pages" href={{"https://segbk.github.io/"+repo.name}}> Documentation </a>
+			<div class="mdl-card__supporting-text mdl-color-text--grey-600">
+				<a href={{repo.html_url}} class="repo-text__name"> {{ repo.name }}  </a>
+				{{repo.description}}              
+			</div>
+			<div class="mdl-card__actions mdl-card--border">
+                <a href={{"https://segbk.github.io/"+repo.name}} class="mdl-button mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Documentation <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">folder</i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+              </div>
+			
 		</div>
       </main>
     </div>
